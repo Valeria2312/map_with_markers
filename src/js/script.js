@@ -14,8 +14,6 @@ L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3'], // Добавьте поддомены Google Maps
     attribution: '&copy; <a href="https://www.google.com/maps">Google Maps</a>',
 }).addTo(map);
-console.log(arrObjects)
-
 
 const createListItem = () => {
     markerList.innerHTML = ''
@@ -74,7 +72,6 @@ const getValueInputs = () => {
     const name = addInfo.querySelector('[name="name"]').value;
     const description = addInfo.querySelector('[name="description"]').value;
     const color = addInfo.querySelector('[name="color"]').value;
-    console.log(color)
     currentObg.type = type;
     currentObg.name = name;
     currentObg.description = description;
@@ -177,7 +174,6 @@ map.on('click', onMapClick);
 
 const filterMarkers = () => {
     const filter = filterText.value.toLowerCase();
-    console.log(filter)
     const filterArr = arrObjects.filter((markerInfo) => {return markerInfo.description.indexOf(filter) !== -1
     })
 
@@ -212,5 +208,4 @@ const filterMarkers = () => {
     })
 }
 
-console.log(filterInput)
 filterInput.addEventListener("click", filterMarkers)
